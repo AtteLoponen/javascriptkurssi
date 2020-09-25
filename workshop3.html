@@ -63,20 +63,17 @@ function showTable() {
         </tbody>
     </table>`)
 }
-
-function omaFunktio2() {
+function omaFunktio4() {
   var persons = ["Nyssa P. Skinner", "593-4241 Lacus, St.","Cape Verde", 
 	       "Camilla F. Strickland","391-2150 Ac Rd.","Andorra",
 	       "Reagan U. Andrews", "P.O. Box 472, 2271 Mauris Ave","Faroe Islands",
 	       "Kelsey D. Clark", "P.O. Box 866, 7793 Aliquet Ave","Bulgaria"
   ];
-	document.write('<table border="1" cellspacing="0">');
-	document.write('<tr><th>Name</th><th>Adress</th><th>Country</th></tr>');
-  document.write('<tbody><tr><td>' + persons[0] + '</td><td>' + persons[1] + '</td><td>' + persons[2] + '</td></tr></tbody>');
-	document.write('<tbody><tr><td>' + persons[3] + '</td><td>' + persons[4] + '</td><td>' + persons[5] + '</td></tr></tbody>');
-  document.write('<tbody><tr><td>' + persons[6] + '</td><td>' + persons[7] + '</td><td>' + persons[8] + '</td></tr></tbody>');
-  document.write('<tbody><tr><td>' + persons[9] + '</td><td>' + persons[10] + '</td><td>' + persons[11] + '</td></tr></tbody>');
-  document.write('</table>');
+document.write("<table border='1' cellspacing='0'>");
+  for (var i = 0; i < persons.length; i+=3) {
+    document.write("<tr><td>"+persons[i]+"</td><td>"+persons[i+1]+"</td><td>"+persons[i+2]+"</td></tr>");
+  }
+document.write("</table>");
 }
 function omaFunktio3() {
   document.getElementById("textdata").value = "Please fill in the form with proper data.";
@@ -86,14 +83,12 @@ function myFunction() {
   document.getElementById("textdata").value = (i);
   i++;
 }
-
 function myFunction2() {
   if(document.getElementById("textdata").value.trim() == '') {
     alert("Laatikko on tyhjä");
   } else {
     alert("Laatikossa on tekstiä")
   }
-  
 }
 function koordinaatit(event) {
   var x = event.clientX;
@@ -105,6 +100,7 @@ function koordinaatit(event) {
 function tyhjenna() {
   document.getElementById("laatikko").innerHTML = "";
 }
+
 </script>
 
 <h1>Workshop 3: JavaScript Events</h1>
@@ -118,7 +114,7 @@ good idea to save the lines of code you write during the exercises for later use
 <p>
   <button onclick="omaFunktio()">Button 1</button>
   <button onclick="showTable()">Button 2</button>
-  <button onclick="omaFunktio2()">Button 3</button>
+  <button onclick="omaFunktio4()">Button 3</button>
 </p>
 
 <ul>
